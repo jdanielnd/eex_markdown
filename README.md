@@ -1,21 +1,27 @@
 # EexMarkdown
 
-**TODO: Add description**
+Example of Elixir code rendering with Markdown.
 
-## Installation
+## Example
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `eex_markdown` to your list of dependencies in `mix.exs`:
+1. Clone this project
 
-```elixir
-def deps do
-  [
-    {:eex_markdown, "~> 0.1.0"}
-  ]
-end
+```
+$ git clone git@github.com:jdanielnd/eex_markdown.git
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/eex_markdown](https://hexdocs.pm/eex_markdown).
+2. Open console inside the project folder
 
+```
+$ cd eex_markdown
+$ iex -S mix
+```
+
+3. Render code using `EexMarkdown.Helper.youtube`
+
+```
+iex(1)> EexMarkdown.as_html("### Teste \n <%= youtube \"123345\" %> ")
+{:ok,
+ "<h3>Teste</h3>\n<p> <iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"360\" src=\"http://www.youtube.com/embed/123345?autoplay=1\" frameborder=\"0\"/> </p>\n",
+ []}
+```
